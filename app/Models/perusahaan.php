@@ -11,8 +11,9 @@ class perusahaan extends Model
     {
         return $this->hasMany(job_posting::class, 'perusahaan_id');
     }
-    public function users()
+    
+    public function user()
     {
-        return $this->hasMany(user::class, 'perusahaan_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

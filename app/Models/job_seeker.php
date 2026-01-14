@@ -11,8 +11,9 @@ class job_seeker extends Model
     {
         return $this->hasMany(job_application::class, 'job_seeker_id');
     }
-    public function users()
+    
+    public function user()
     {
-        return $this->hasMany(user::class, 'job_seeker_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

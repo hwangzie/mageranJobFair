@@ -16,7 +16,6 @@ return new class extends Migration
             $table->foreignId('job_posting_id')->constrained('job_postings')->onDelete('cascade');
             $table->foreignId('job_seeker_id')->constrained('job_seekers')->onDelete('cascade');
             $table->enum('status', ['pending', 'wawancara', 'diterima', 'ditolak'])->default('pending');
-            $table->timestamp('applied_at')->useCurrent(); // Default waktu sekarang
             $table->timestamps();
         });
     }
