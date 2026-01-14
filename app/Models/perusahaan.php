@@ -9,7 +9,7 @@ class perusahaan extends Model
     //
     public function jobPostings()
     {
-        return $this->hasMany(job_posting::class, 'perusahaan_id');
+        return $this->hasMany(JobPosting::class, 'perusahaan_id');
     }
     
     public function user()
