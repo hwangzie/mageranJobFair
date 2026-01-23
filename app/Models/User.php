@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'nomor_telepon',
     ];
 
     /**
@@ -44,5 +46,30 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    
+    public function jobSeeker()
+    {
+        return $this->hasOne(JobSeeker::class, 'user_id');
+    }
+    
+    public function perusahaan()
+    {
+        return $this->hasOne(Perusahaan::class, 'user_id');
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isCompany(): bool
+    {
+        return $this->role === 'company';
+    }
+
+    public function isJobSeeker(): bool
+    {
+        return $this->role === 'job_seeker';
     }
 }

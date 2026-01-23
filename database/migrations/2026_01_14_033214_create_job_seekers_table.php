@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('job_seekers', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->date('tanggal_lahir');
             $table->string('nomor_telepon', 15);

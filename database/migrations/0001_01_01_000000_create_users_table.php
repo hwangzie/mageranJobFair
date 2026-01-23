@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('role', ['pencari_kerja', 'perusahaan']);  
+            $table->enum('role', ['job_seeker', 'company', 'admin'])->default('job_seeker');
+            $table->string('nomor_telepon', 15)->nullable();  
             $table->rememberToken();
             $table->timestamps();
         });

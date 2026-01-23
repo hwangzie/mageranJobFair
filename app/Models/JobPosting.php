@@ -4,15 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class job_posting extends Model
+class JobPosting extends Model
 {
     //
     public function perusahaan()
     {
-        return $this->belongsTo(perusahaan::class, 'perusahaan_id');
+        return $this->belongsTo(Perusahaan::class);
     }
+
     public function jobApplications()
     {
-        return $this->hasMany(job_application::class, 'job_posting_id');
+        return $this->hasMany(JobApplication::class);
     }
 }
