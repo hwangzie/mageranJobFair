@@ -9,6 +9,23 @@
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
+        <!--- role -->
+        <div class="mt-4">
+            <x-input-label for="role" :value="__('Register As')" />
+            <select id="role" name="role" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" required>
+                <option value="pencari_kerja" {{ old('role') == 'pencari_kerja' ? 'selected' : '' }}>{{ __('Job Seeker') }}</option>
+                <option value="perusahaan" {{ old('role') == 'perusahaan' ? 'selected' : '' }}>{{ __('Company') }}</option>
+            </select>
+            <x-input-error :messages="$errors->get('role')" class="mt-2" />
+        </div>
+
+        <!-- phone number -->
+        <div class="mt-4">
+            <x-input-label for="phone" :value="__('Phone Number')" />
+            <x-text-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" required autocomplete="tel" />
+            <x-input-error :messages="$errors->get('phone')" class="mt-2" />
+        </div>
+
         <!-- Email Address -->
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />
