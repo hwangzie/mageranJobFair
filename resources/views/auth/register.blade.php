@@ -13,8 +13,8 @@
         <div class="mt-4">
             <x-input-label for="role" :value="__('Register As')" />
             <select id="role" name="role" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" required>
-                <option value="pencari_kerja" {{ old('role') == 'pencari_kerja' ? 'selected' : '' }}>{{ __('Job Seeker') }}</option>
-                <option value="perusahaan" {{ old('role') == 'perusahaan' ? 'selected' : '' }}>{{ __('Company') }}</option>
+                <option value="job_seeker" {{ old('role') == 'pencari_kerja' ? 'selected' : '' }}>{{ __('Job Seeker') }}</option>
+                <option value="company" {{ old('role') == 'perusahaan' ? 'selected' : '' }}>{{ __('Company') }}</option>
             </select>
             <x-input-error :messages="$errors->get('role')" class="mt-2" />
         </div>

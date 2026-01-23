@@ -57,4 +57,19 @@ class User extends Authenticatable
     {
         return $this->hasOne(Perusahaan::class, 'user_id');
     }
+
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isCompany(): bool
+    {
+        return $this->role === 'company';
+    }
+
+    public function isJobSeeker(): bool
+    {
+        return $this->role === 'job_seeker';
+    }
 }
