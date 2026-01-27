@@ -26,7 +26,15 @@ Route::middleware('auth')->group(function () {
 
 // Companies and admin can manage job postings
 Route::middleware(['auth', 'company'])->group(function () {
-    Route::resource('job-postings', \App\Http\Controllers\JobPostingController::class);
+    Route::prefix('job-postings')->group(function () {
+        Route::get('/', [\App\Http\Controllers\JobPostingController::class, 'index'])->name('job-postings.index');
+        Route::get('/create', [\App\Http\Controllers\JobPostingController::class, 'create'])->name('job-postings.create');
+        Route::post('/store', [\App\Http\Controllers\JobPostingController::class, 'store'])->name('job-postings.store');
+        Route::get('/datatable', [\App\Http\Controllers\JobPostingController::class, 'datatable'])->name('job-postings.datatable');
+        Route::get('/edit/{id}', [\App\Http\Controllers\JobPostingController::class, 'edit'])->name('job-postings.edit');
+        Route::post('/update/{id}', [\App\Http\Controllers\JobPostingController::class, 'update'])->name('job-postings.update');
+        Route::delete('/delete', [\App\Http\Controllers\JobPostingController::class, 'delete'])->name('job-postings.delete');
+    });
 });
 
 

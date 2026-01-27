@@ -13,6 +13,12 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('asset/libs/sweetalert2/sweetalert2.min.css') }}">
+        <script src="{{ asset('asset/js/jquery.js') }}"></script>
+        <script src="https://kit.fontawesome.com/afcbaa4d62.js" crossorigin="anonymous"></script>
+        <script src="{{ asset('asset/libs/sweetalert2/sweetalert2.min.js') }}"></script>
+
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
