@@ -33,7 +33,7 @@ class JobPostingController extends Controller
             return DataTables::of($query)
                 ->addIndexColumn()
                 ->addColumn('salary_range', function ($row) {
-                    return 'Rp ' . number_format($row->salary_min, 0, ',', '.') . ' - Rp ' . number_format($row->salary_max, 0, ',', '.');
+                    return 'Rp ' . number_format($row->gaji_min, 0, ',', '.') . ' - Rp ' . number_format($row->gaji_max, 0, ',', '.');
                 })
                 ->addColumn('action', function ($row) {
                     return '
